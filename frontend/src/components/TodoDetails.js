@@ -14,8 +14,9 @@ const TodoDetails = () => {
   if (!todo) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="container">
       <h1>{todo.title}</h1>
+      <h2>Description:</h2>
       <p>{todo.description}</p>
       <Link to="/">Back to List</Link>
     </div>

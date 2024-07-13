@@ -34,17 +34,13 @@ const TodoForm = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>{id ? 'Edit Todo' : 'Add Todo'}</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Title:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        </label>
-        <label>
-          Description:
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
-        </label>
+        <label htmlFor="title">Title:</label>
+        <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <label htmlFor="desciption">Description:</label>
+        <textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
         <button type="submit">{id ? 'Update' : 'Add'}</button>
       </form>
       <Link to="/">Back to List</Link>

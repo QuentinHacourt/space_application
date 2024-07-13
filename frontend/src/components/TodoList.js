@@ -18,18 +18,22 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Todo List</h1>
-      <ul>
+      <ul className="todo-list">
         {todos.map(todo => (
-          <li key={todo.id}>
-            <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-            <Link to={`/edit/${todo.id}`}>Edit</Link>
+          <li key={todo.id} className="todo-item">
+            <span className="todo-title">
+              <Link to={`/todos/${todo.id}`}>{todo.title}</Link>
+            </span>
+            <div className="todo-buttons">
+              <Link to={`/edit/${todo.id}`} className="button edit">Edit</Link>
+              <button onClick={() => deleteTodo(todo.id)} className="button delete">Delete</button>
+            </div>
           </li>
         ))}
       </ul>
-      <Link to="/add">Add</Link>
+      <Link to="/add" className="button">Add New Todo</Link>
     </div>
   );
 };
